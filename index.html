@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kimya Proje G&ouml;sterimi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="top-bar">
+      <div class="branding">
+        <h1>Kimya Performans Ödevi</h1>
+        <p>
+          Kimyasal se&ccedil;erek videoyu, haber yazısını ve rapor &ouml;zetini
+          inceleyebilirsiniz.
+        </p>
+      </div>
+    </header>
+
+    <main class="layout">
+      <aside class="chemical-list" aria-label="Kimyasal se&ccedil;enekleri">
+        <h2>Kimyasallar</h2>
+        <ul id="chemicalOptions"></ul>
+      </aside>
+
+      <section class="content-area" aria-live="polite">
+        <div class="content-header">
+          <div class="content-header-top">
+            <h2 id="chemicalTitle">Bir kimyasal se&ccedil;in</h2>
+            <a
+              id="reportButton"
+              class="content-button"
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+              hidden
+            >
+              Raporu oku
+            </a>
+          </div>
+          <p id="chemicalDescription">
+            Soldaki listeden bir kimyasal se&ccedil;erek detayları g&ouml;r&uuml;n.
+          </p>
+        </div>
+
+        <div class="content-sections">
+          <article class="content-card">
+            <h3>Video</h3>
+            <div id="videoContainer" class="video-wrapper">
+              <p>Se&ccedil;ilen kimyasalın videosu burada g&ouml;r&uuml;nt&uuml;lenecek.</p>
+            </div>
+          </article>
+
+          <article class="content-card">
+            <h3>Haber Yazısı</h3>
+            <div id="articleContainer" class="article-wrapper">
+              <p>Se&ccedil;ilen kimyasala dair bir haber yazısı burada yer alacak.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>
+        &copy; <span id="currentYear"></span> Kimya &Ouml;devi G&ouml;sterimi. T&uuml;m
+        hakları saklıdır.
+      </p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

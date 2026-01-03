@@ -1,0 +1,301 @@
+:root {
+  --bg: #0f172a;
+  --bg-alt: #111c31;
+  --primary: #58a6ff;
+  --primary-muted: rgba(88, 166, 255, 0.16);
+  --text: #e7ecf7;
+  --text-muted: #94a3b8;
+  --border: #1f2a40;
+  --shadow: 0 20px 45px rgba(8, 15, 31, 0.38);
+  font-size: 16px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: radial-gradient(circle at 20% 20%, rgba(88, 166, 255, 0.12), transparent 55%),
+    radial-gradient(circle at 80% 0%, rgba(124, 58, 237, 0.18), transparent 60%), var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.top-bar {
+  padding: 2.5rem clamp(1.5rem, 4vw, 3.5rem);
+  background: radial-gradient(circle at top left, rgba(88, 166, 255, 0.35), transparent 45%),
+    radial-gradient(circle at top right, rgba(56, 189, 248, 0.28), transparent 55%),
+    linear-gradient(160deg, #0b1220, #111c31);
+  color: #ffffff;
+}
+
+.branding h1 {
+  margin: 0 0 0.75rem;
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  letter-spacing: 0.02em;
+}
+
+.branding p {
+  margin: 0;
+  max-width: 32rem;
+  font-size: clamp(1rem, 2.4vw, 1.1rem);
+  line-height: 1.6;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(220px, 280px) 1fr;
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+  padding: clamp(1.5rem, 4vw, 3rem);
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  flex: 1;
+}
+
+.chemical-list {
+  background: rgba(17, 28, 49, 0.92);
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+  align-self: start;
+  border: 1px solid var(--border);
+}
+
+.chemical-list h2 {
+  margin: 0 0 1.25rem;
+  font-size: 1.05rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.chemical-list ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.chemical-list button {
+  width: 100%;
+  border: 1px solid transparent;
+  background: rgba(15, 23, 42, 0.75);
+  color: var(--text);
+  padding: 0.85rem 1rem;
+  border-radius: 14px;
+  text-align: left;
+  font-size: 0.98rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 140ms ease, box-shadow 140ms ease, border 140ms ease, background 140ms ease;
+}
+
+.chemical-list button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(88, 166, 255, 0.18);
+  border-color: rgba(88, 166, 255, 0.65);
+  background: rgba(88, 166, 255, 0.12);
+}
+
+.chemical-list button:focus-visible {
+  outline: 3px solid rgba(88, 166, 255, 0.45);
+  outline-offset: 2px;
+}
+
+.chemical-list button.active {
+  border-color: var(--primary);
+  background: var(--primary-muted);
+  color: var(--primary);
+  box-shadow: 0 12px 32px rgba(88, 166, 255, 0.28);
+}
+
+.content-area {
+  display: grid;
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.content-header {
+  background: rgba(15, 23, 42, 0.85);
+  border-radius: 20px;
+  padding: clamp(1.5rem, 3vw, 2rem);
+  box-shadow: var(--shadow);
+  display: grid;
+  gap: 0.75rem;
+  border: 1px solid var(--border);
+}
+
+.content-header-top {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+}
+
+.content-header h2 {
+  margin: 0;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+.content-header p {
+  margin: 0;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.content-sections {
+  display: grid;
+  gap: clamp(1.25rem, 3vw, 1.75rem);
+}
+
+.content-card {
+  background: rgba(15, 23, 42, 0.82);
+  border-radius: 20px;
+  padding: clamp(1.5rem, 3vw, 2rem);
+  box-shadow: var(--shadow);
+  display: grid;
+  gap: 1rem;
+  transition: transform 200ms ease, box-shadow 200ms ease, border 200ms ease;
+  border: 1px solid var(--border);
+}
+
+.content-card h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.content-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 28px 55px rgba(8, 15, 31, 0.45);
+  border-color: rgba(88, 166, 255, 0.35);
+}
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  background: linear-gradient(160deg, rgba(88, 166, 255, 0.22), rgba(14, 116, 144, 0.14));
+  border-radius: 16px;
+  overflow: hidden;
+  padding: clamp(0.75rem, 2.5vw, 1.25rem);
+  color: var(--text-muted);
+}
+
+.video-wrapper video {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 540px;
+  border-radius: 12px;
+  background: #020617;
+  object-fit: contain;
+}
+
+.video-wrapper p {
+  margin: 0.5rem 0 0;
+  text-align: center;
+}
+
+.article-wrapper {
+  display: grid;
+  gap: 0.75rem;
+  color: var(--text);
+  line-height: 1.7;
+}
+
+.content-line {
+  margin: 0;
+  padding: 0.75rem 0.9rem;
+  border-radius: 12px;
+  background: rgba(15, 23, 42, 0.65);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-weight: 500;
+}
+
+.content-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  width: fit-content;
+  margin: 0;
+  padding: 0.55rem 1.1rem;
+  border-radius: 999px;
+  background: var(--primary);
+  color: #0b1220;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  transition: transform 140ms ease, box-shadow 140ms ease, background 140ms ease;
+}
+
+.content-button:hover,
+.content-button:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(88, 166, 255, 0.35);
+  background: #7ec0ff;
+  color: #020617;
+}
+
+.content-header-top .content-button {
+  padding: 0.5rem 1rem;
+}
+
+.footer {
+  text-align: center;
+  padding: 2rem 1rem 2.5rem;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+@media (max-width: 960px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .chemical-list {
+    position: sticky;
+    top: 1.5rem;
+    z-index: 2;
+  }
+}
+
+@media (max-width: 640px) {
+  .top-bar {
+    padding: 2rem 1.5rem;
+  }
+
+  .layout {
+    padding: 1.5rem clamp(1rem, 6vw, 1.75rem) 2.5rem;
+  }
+
+  .chemical-list {
+    position: static;
+  }
+
+  .video-wrapper {
+    min-height: 200px;
+  }
+}
